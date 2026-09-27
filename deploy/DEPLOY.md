@@ -13,6 +13,64 @@ service, no port and no database. nginx serves files from disk.
 | Live files (nginx root) | `/opt/zatoengineering/www` |
 | nginx vhost | `/etc/nginx/conf.d/zatoengineering.conf` |
 
+## Migration status (last updated 2026-09-27)
+
+| Step | Status |
+|---|---|
+| Source recovered from old host, pushed to GitHub | Done |
+| Site built and published on VPS (`/opt/zatoengineering/www`) | Done |
+| nginx vhost installed; all pages incl. `/contact/`-style URLs tested | Done |
+| Old placeholder kept: `/opt/zatoengineering/app.pre-site-20260927114203`, `/etc/nginx/zatoengineering.conf.pre-site-*` | Done |
+| Revoke leaked `RESEND_API_KEY` in Resend | **Johan: to do** |
+| Delete `.next.zip`, `out.zip`, `.next/` from old host's web root | **Blocked: needs cPanel login** |
+| Point `@` + `www` A records to `41.222.36.147` | **Blocked: needs cPanel login / support** |
+| certbot HTTPS certificate | Waiting on DNS |
+| Send/receive test email | Waiting on DNS |
+
+### Where the old site and DNS actually live
+
+- zatoengineering.co.za is **not** its own hosting package. It is an **addon
+  domain inside the `barkie.co.za` cPanel** (Domains.co.za "CP Business",
+  server `cp57.domains.co.za`, IP `169.239.218.57`).
+- Its nameservers are `ns1-4.tld-ns.*`, so DNS is served from that
+  **cPanel's Zone Editor**. The registrar's "Manage DNS" page for
+  zatoengineering.co.za is empty and **editing it does nothing**.
+- The client portal's hosting "Manage DNS" only shows the **barkie.co.za**
+  zone, not the addon domains.
+- The portal's one-click cPanel **Login** landed on the cPanel password page
+  (single sign-on did not work).
+- Web files: the addon domain's folder in that cPanel (the backup zip was
+  named `zatoengineering.co.za/`).
+- Mail: `MX mx1.tld-mx.com`, SPF `v=spf1 +a +mx include:_spf.tld-mx.com ~all`.
+  Mail stays with Domains.co.za. **Do not change MX/TXT records.**
+- The same cPanel also holds procomsolutions.co.za, lapanza.co.za,
+  lapanza3d.co.za, johanbarkhuizen.co.za and n-a-i-l.co.za. **Do not cancel
+  the barkie.co.za hosting** until every domain's DNS and email is accounted
+  for.
+
+### What to ask Domains.co.za support
+
+> Please change the DNS for the addon domain **zatoengineering.co.za** on my
+> barkie.co.za cPanel hosting (cp57): set the **A records for
+> `zatoengineering.co.za` and `www.zatoengineering.co.za` to
+> `41.222.36.147`** (my VPS). Please leave the MX, SPF/TXT and mail records
+> unchanged. Also, the client-area cPanel "Login" button does not sign me in
+> automatically. Can you check that?
+
+Alternatively, reset the cPanel password (portal: hosting, Password,
+Reset), log in to cPanel and use **Zone Editor** yourself.
+
+### After DNS points at the VPS
+
+```bash
+nslookup www.zatoengineering.co.za   # must show 41.222.36.147
+ssh -i ~/.ssh/lapanza_vps_deploy deploy@41.222.36.147 "sudo certbot --nginx -d zatoengineering.co.za -d www.zatoengineering.co.za"
+```
+
+Then check https, send a test email to `admin@zatoeng.co.za` (that address
+is correct and intentional), and delete `.next.zip`, `out.zip` and `.next/`
+from the old cPanel folder.
+
 ## Updating the live site (every time)
 
 Push to `main`, then from Johan's PC:

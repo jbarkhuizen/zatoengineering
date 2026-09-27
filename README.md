@@ -1,3 +1,14 @@
+# Zato Engineering website (zatoengineering.co.za)
+
+Static Next.js site (`output: 'export'`), hosted on the shared AlmaLinux VPS
+next to lapanza3d, procomsolutions and barkie.
+
+- **Deploying, migration status and next steps:** [deploy/DEPLOY.md](deploy/DEPLOY.md)
+- **Contact form:** not working yet (static export has no `/api/send`). The
+  old route is in [docs/contact-api-route.ts.txt](docs/contact-api-route.ts.txt).
+
+---
+
 This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
 ## Getting Started
