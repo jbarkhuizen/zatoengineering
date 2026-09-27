@@ -25,13 +25,11 @@ ssh -i ~/.ssh/lapanza_vps_deploy deploy@41.222.36.147 "bash /opt/zatoengineering
 
 1. **Before anything:** at Domains.co.za DNS, lower the TTL on the `@` and
    `www` A records to 300. Wait 24 hours.
-2. First deploy (the script is not on the server yet, so clone it first):
+2. First deploy (the script is not on the server yet, so send it over SSH).
+   It moves the old placeholder page and vhost aside, never deletes them:
 
    ```bash
-   ssh -i ~/.ssh/lapanza_vps_deploy deploy@41.222.36.147
-   sudo mkdir -p /opt/zatoengineering && sudo chown deploy:deploy /opt/zatoengineering
-   git clone https://github.com/jbarkhuizen/zatoengineering.git /opt/zatoengineering/app
-   bash /opt/zatoengineering/app/deploy/deploy-app.sh
+   ssh -i ~/.ssh/lapanza_vps_deploy deploy@41.222.36.147 "bash -s" < deploy/deploy-app.sh
    ```
 
 3. Test before switching DNS. On Johan's PC, add this line to

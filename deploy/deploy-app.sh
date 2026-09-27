@@ -15,6 +15,12 @@ WWW_DIR="$BASE_DIR/www"
 
 if [ ! -d "$APP_DIR/.git" ]; then
   sudo mkdir -p "$BASE_DIR" && sudo chown deploy:deploy "$BASE_DIR"
+  if [ -e "$APP_DIR" ]; then
+    # e.g. the old placeholder page -- keep it, never delete.
+    BACKUP="$APP_DIR.pre-site-$(date +%Y%m%d%H%M%S)"
+    echo "==> Moving existing non-git $APP_DIR aside to $BACKUP"
+    mv "$APP_DIR" "$BACKUP"
+  fi
   echo "==> Cloning repo (first run)"
   git clone "$REPO_URL" "$APP_DIR"
 fi
@@ -40,9 +46,14 @@ if [ -d "$WWW_DIR" ]; then mv "$WWW_DIR" "$WWW_DIR.old"; fi
 mv "$WWW_DIR.new" "$WWW_DIR"
 rm -rf "$WWW_DIR.old"
 
-if [ ! -f /etc/nginx/conf.d/zatoengineering.conf ]; then
-  echo "==> Installing nginx vhost (first run)"
-  sudo cp deploy/nginx-zatoengineering.conf /etc/nginx/conf.d/zatoengineering.conf
+VHOST=/etc/nginx/conf.d/zatoengineering.conf
+if [ ! -f "$VHOST" ] || grep -q "root /opt/zatoengineering/app;" "$VHOST"; then
+  # Missing, or still the old placeholder vhost (root pointed at app/).
+  if [ -f "$VHOST" ]; then
+    sudo mv "$VHOST" "/etc/nginx/zatoengineering.conf.pre-site-$(date +%Y%m%d%H%M%S)"
+  fi
+  echo "==> Installing nginx vhost"
+  sudo cp deploy/nginx-zatoengineering.conf "$VHOST"
 else
   # certbot appends HTTPS blocks to the live file -- never overwrite it.
   echo "==> nginx vhost exists -- leaving /etc/nginx/conf.d/zatoengineering.conf as-is (certbot manages it)"
