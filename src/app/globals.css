@@ -1,0 +1,12 @@
+@import "tailwindcss";
+
+@theme {
+  --color-zato-gold: #b8860b;
+  --color-zato-grey: #9ca3af;
+  --color-zato-charcoal: #111827;
+}
+
+body {
+  background-color: var(--color-slate-950);
+  color: var(--color-slate-100);
+}

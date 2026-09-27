@@ -1,0 +1,35 @@
+import { NextResponse } from 'next/server';
+import { Resend } from 'resend';
+
+// Initialize Resend with an environment variable API key
+const resend = new Resend(process.env.RESEND_API_KEY);
+
+export async function POST(request: Request) {
+  try {
+    const body = await request.json();
+    const { name, email, message, company } = body;
+
+    // Validate data briefly
+    if (!name || !email || !message) {
+      return NextResponse.json({ error: 'Missing required fields' }, { status: 400 });
+    }
+
+    const data = await resend.emails.send({
+      from: 'Zato Website <web@zatoeng.co.za>', // Replace with your custom domain email later
+      to: ['admin@zatoeng.co.za'], // 👈 The inbox where you want to receive RFQs/Inquiries
+      subject: `New Zato Engineering Inquiry from ${name}`,
+      html: `
+        <h2>New Contact Form Submission</h2>
+        <p><strong>Name:</strong> ${name}</p>
+        <p><strong>Email:</strong> ${email}</p>
+        <p><strong>Company:</strong> ${company || 'N/A'}</p>
+        <p><strong>Message:</strong></p>
+        <p>${message}</p>
+      `,
+    });
+
+    return NextResponse.json({ success: true, data });
+  } catch (error: any) {
+    return NextResponse.json({ error: error.message }, { status: 500 });
+  }
+}
