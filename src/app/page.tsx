@@ -21,7 +21,7 @@ export default function HomePage() {
               Our Capabilities
             </Link>
             <Link href="/contact" className="border border-slate-800 hover:border-slate-600 text-slate-300 font-medium px-8 py-3.5 rounded text-sm uppercase tracking-wider transition-colors">
-              Request An Quote
+              CONTACT US
             </Link>
           </div>
         </div>
@@ -39,9 +39,9 @@ export default function HomePage() {
         {/* Card 1 */}
         <div className="p-8 bg-white/[0.01] border border-white/[0.03] rounded-xl space-y-4 hover:border-zato-gold/30 hover:bg-white/[0.02] transition-all duration-300 group transform hover:-translate-y-1 shadow-2xl">
           <div className="flex justify-between items-center border-b border-white/[0.04] pb-2">
-            <span className="text-zato-gold font-mono text-[14px] tracking-widest uppercase font-bold">01 / Mechanical Limits.</span>
+            <span className="text-zato-gold font-mono text-[14px] tracking-widest uppercase font-bold">01 / Mechanical Limits</span>
           </div>
-          <h3 className="text-white text-xl font-bold uppercase tracking-wide font-display">Precision Grinding.</h3>
+          <h3 className="text-white text-xl font-bold uppercase tracking-wide font-display">Precision Grinding</h3>
           <p className="text-slate-400 text-sm leading-relaxed font-sans font-light">
             Precision grinding and engineering services that boast a tolerance of 0.001mm, Perfection to the micron for critical components.
           </p>
@@ -49,9 +49,9 @@ export default function HomePage() {
         {/* Card 2 */}
         <div className="p-8 bg-white/[0.01] border border-white/[0.03] rounded-xl space-y-4 hover:border-zato-gold/30 hover:bg-white/[0.02] transition-all duration-300 group transform hover:-translate-y-1 shadow-2xl">
           <div className="flex justify-between items-center border-b border-white/[0.04] pb-2">
-            <span className="text-zato-gold font-mono text-[14px] tracking-widest uppercase font-bold">02 / Special Services.</span>
+            <span className="text-zato-gold font-mono text-[14px] tracking-widest uppercase font-bold">02 / Special Services</span>
           </div>
-          <h3 className="text-white text-xl font-bold uppercase tracking-wide font-display">Advanced Materials.</h3>
+          <h3 className="text-white text-xl font-bold uppercase tracking-wide font-display">Advanced Materials</h3>
           <p className="text-slate-400 text-sm leading-relaxed font-sans font-light">
             Engineered surfacing optimized for hyper-hard components including Silicon Carbide, Tungsten Carbide, and Alumina Oxide.
           </p>
@@ -59,9 +59,9 @@ export default function HomePage() {
         {/* Card 3 */}
         <div className="p-8 bg-white/[0.01] border border-white/[0.03] rounded-xl space-y-4 hover:border-zato-gold/30 hover:bg-white/[0.02] transition-all duration-300 group transform hover:-translate-y-1 shadow-2xl">
           <div className="flex justify-between items-center border-b border-white/[0.04] pg-2">
-            <span className="text-zato-gold font-mono text-[14px] tracking-widest uppercase font-bold">03 / Core Focus.</span>
+            <span className="text-zato-gold font-mono text-[14px] tracking-widest uppercase font-bold">03 / Core Focus</span>
           </div>
-          <h3 className="text-white text-xl font-bold uppercase tracking-wide font-display">Rockdrill Reconditioning.</h3>
+          <h3 className="text-white text-xl font-bold uppercase tracking-wide font-display">Rockdrill Reconditioning</h3>
           <p className="text-slate-400 text-sm leading-relaxed font-sans font-light">
             Complete tactical repair and structural overhaul of mining cylinders paired with specialized hard-chrome electroplating setups.
           </p>

@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import Image from "next/image";
 import { Geist, Orbitron } from "next/font/google"; // Pulling both directly from Google Fonts natively
+import Footer from "@/components/Footer";
 
 import "./globals.css";
 
@@ -67,9 +68,7 @@ export default function RootLayout({
 
         <main className="flex-grow relative">{children}</main>
 
-        <footer className="border-t border-white/[0.02] bg-slate-950/40 py-8 text-center text-[10px] text-slate-600 tracking-widest uppercase font-mono">
-          &copy; {new Date().getFullYear()} ZATO ENGINEERING. [ SYSTEM PRECISION: VERIFIED ]
-        </footer>
+        <Footer />
       </body>
     </html>
   );

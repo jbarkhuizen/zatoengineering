@@ -25,7 +25,7 @@ export default function AboutPage() {
         </div>
         <div className="text-center md:text-right">
           <div className="text-5xl font-black tracking-tight text-white font-mono">
-            ±0.01<span className="text-zato-gold">mm</span>
+            <span>±0.01</span><span className="text-zato-gold">mm</span>
           </div>
           <div className="text-[10px] uppercase tracking-widest text-slate-500 font-bold font-mono">
             Verified Deviation Boundary

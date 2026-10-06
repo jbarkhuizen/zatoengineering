@@ -42,7 +42,7 @@ export default function ContactPage() {
         {/* Header Section */}
         <div className="max-w-3xl mb-16 space-y-4 block">
           <h1 className="text-4xl md:text-5xl font-semibold tracking-tight text-white">
-            Request a <span className="text-blue-500 font-medium">Technical Quote</span>
+            Contact <span className="text-blue-500 font-medium">US</span>
           </h1>
           <p className="text-zinc-400 text-lg leading-relaxed">
             Connect with our engineering specialists. Submit your components' technical specifications for precision grinding, hard chroming, or cylinder reconditioning.
@@ -69,7 +69,7 @@ export default function ContactPage() {
 
               <div className="p-6 rounded-xl border border-slate-900 bg-slate-900/20 hover:border-zato-gold/80 hover:bg-slate-900/40 hover:-translate-y-0.5 transition-all duration-300 group cursor-default">
                 <h3 className="font-medium text-slate-200 group-hover:text-zato-gold transition-colors">
-                    Specialized Services
+                    Specialised Services
                 </h3>
                 <p className="text-sm text-slate-400 mt-2 leading-relaxed">
                     Cylinder reconditioning, precision cylindrical grinding, heavy industrial hard chrome plating, and custom machining.
@@ -90,8 +90,10 @@ export default function ContactPage() {
             </div>
 
             <div className="pt-8 border-t border-zinc-900 space-y-3 text-sm text-zinc-400 block">
-              <p><strong className="text-zinc-200">Technical Inquiries:</strong> engineering@zato.co.za</p>
-              <p><strong className="text-zinc-200">Operating Hours:</strong> Mon – Fri: 07:30 – 16:35</p>
+              <p><strong className="text-zinc-200">Technical Inquiries:</strong> admin@zatoeng.co.za</p>
+              <p><strong className="text-zinc-200">Contact Office:</strong>+27 11 362 5832</p>
+              <p><strong className="text-zinc-200">Contact Cell:</strong>+27 82 780 7392</p>
+              <p><strong className="text-zinc-200">Operating Hours:</strong> Mon – Fri: 07:30 – 15:00</p>
             </div>
           </div>
 
@@ -181,7 +183,7 @@ export default function ContactPage() {
                 type="submit"
                 className="w-full py-4 px-6 rounded-lg bg-blue-600 hover:bg-blue-500 font-medium text-white transition-colors duration-200 cursor-pointer text-center block tracking-wide relative z-30 active:scale-[0.99]"
               >
-                Submit Request for Quote
+                Submit
               </button>
 
             </form>

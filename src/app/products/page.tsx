@@ -28,18 +28,18 @@ export default function ProductsPage() {
                 <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 space-y-4">
 
                     {/* Services Card 01 */}
-                    <div className="p-8 bg-white/[0.1] border border-white/[0.03] rounded-xl space-y-6 hover:border-zato-gold/40 hover:bg-white/[0.02] transition-all duration-300 group transform hover:-translate-y-1 shadow-2xl flex flex-col justify-between">
+                    <div className="p-8 bg-white/[0.04] border border-white/[0.03] rounded-xl space-y-6 hover:border-zato-gold/40 hover:bg-white/[0.02] transition-all duration-300 group transform hover:-translate-y-1 shadow-2xl flex flex-col justify-between">
                         <div className="space-y-4">
                             <div className="flex justify-between items-center border-b border-white/[0.4] pb-3">
                                 <span className="text-zato-gold font-mono text-[10px] tracking-widest uppercase font-bold">
                                     Division 01
                                 </span>
-                                <span className="text-slate-500 font-mono text-xs bg-white/[0.5] px-2 py-0.5 rounded border border-white/[0.05">
+                                <span className="text-slate-500 font-mono text-xs bg-white/[0.02] px-2 py-0.5 rounded border border-white/[0.05]">
                                     &plusmn;0.01mm
                                 </span>
                             </div>
                             <h3 className="text-white text-2xl font-bold uppercase tracking-wide font-display">
-                                Precision Grinding.
+                                Precision Grinding
                             </h3>
                             <p className="text-slate-400 text-sm leading-relaxed font-light">
                                 Our facility is custom-equipped for specialized universal precision grinding on a wide range of increibly hard substrate profiles. We reliably process components to extremely tight geometric parameters.
@@ -59,13 +59,13 @@ export default function ProductsPage() {
                     </div>
 
                     {/* Service Card 2 */}
-                    <div className="p-8 bg-white/[0.1] border border-white/[0.03] rounded-xl space-y-6 hover:border-zato-gold/40 hover:bg-white/[0.02] transition-all duration-300 group transform hover:-translate-y-1 shadow-2xl flex flex-col justify-between">
+                    <div className="p-8 bg-white/[0.04] border border-white/[0.03] rounded-xl space-y-6 hover:border-zato-gold/40 hover:bg-white/[0.02] transition-all duration-300 group transform hover:-translate-y-1 shadow-2xl flex flex-col justify-between">
                         <div className="space-y-4">
                             <div className="flex justify-between items-center border-b border-white/[0.4] pb-3">
                                 <span className="text-zato-gold font-mono text-[10px] tracking-widest uppercase font-bold">
                                     Division 2
                                 </span>
-                                <span className="text-slate-500 font-mono text-xs bg-white/[0.5] px-2 py-0.5 rounded border border-white/[0.05]">
+                                <span className="text-slate-500 font-mono text-xs bg-white/[0.02] px-2 py-0.5 rounded border border-white/[0.05]">
                                     IN_HOUSE
                                 </span>
                             </div>
