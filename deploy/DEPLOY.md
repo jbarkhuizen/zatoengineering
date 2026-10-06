@@ -16,9 +16,9 @@ service, no port and no database. nginx serves files from disk.
 ## Migration status (last updated 2026-10-06)
 
 **2026-10-06:** DNS for `@` and `www` now points at the VPS (MX/SPF
-unchanged). The site is serving from the VPS over **http only**: the
-certbot step below is still outstanding, so https visitors get a
-certificate error until it runs. Source updated to the 20 July version
+unchanged). HTTPS certificate issued the same day
+(Let's Encrypt, auto-renews via `certbot-renew.timer`); http redirects to
+https. **The site is live on the VPS.** Source updated to the 20 July version
 (from `D:\Projects\Zato\zato-engineering`); all pages match the old live
 site's text.
 
@@ -26,7 +26,7 @@ site's text.
 |---|---|
 | Source recovered from old host, pushed to GitHub | Done (20 Jul version, 2026-10-06) |
 | Point `@` + `www` A records to `41.222.36.147` | **Done (by support)** |
-| certbot HTTPS certificate | **To do next (needs Johan's OK)** |
+| certbot HTTPS certificate | **Done 2026-10-06** (expires 2027-01-04, auto-renews) |
 | Site built and published on VPS (`/opt/zatoengineering/www`) | Done |
 | nginx vhost installed; all pages incl. `/contact/`-style URLs tested | Done |
 | Old placeholder kept: `/opt/zatoengineering/app.pre-site-20260927114203`, `/etc/nginx/zatoengineering.conf.pre-site-*` | Done |
