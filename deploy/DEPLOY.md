@@ -30,7 +30,7 @@ site's text.
 | Site built and published on VPS (`/opt/zatoengineering/www`) | Done |
 | nginx vhost installed; all pages incl. `/contact/`-style URLs tested | Done |
 | Old placeholder kept: `/opt/zatoengineering/app.pre-site-20260927114203`, `/etc/nginx/zatoengineering.conf.pre-site-*` | Done |
-| Revoke leaked `RESEND_API_KEY` in Resend | **Johan: to do** |
+| Leaked `RESEND_API_KEY` (`re_UNrQK…`, the original developer's Resend account; Johan has no access) | **Reported to Resend support 2026-10-07**; local `.env.local` deleted. Not used by the site; neither domain is verified in Resend |
 | Delete `.next.zip`, `out.zip`, `.next/` from old host's web root | **Blocked: needs cPanel login** |
 | Send/receive test email | To do |
 
